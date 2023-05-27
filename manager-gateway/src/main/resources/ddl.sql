@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_user_2_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`),
-  UNIQUE KEY `account_unique` (`username`),
+  UNIQUE KEY `username_unique` (`username`),
   UNIQUE KEY `email_unique` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -71,3 +71,4 @@ CREATE TABLE IF NOT EXISTS `cart_product` (
   CONSTRAINT `FK_cart_product_2_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
   CONSTRAINT `FK_cart_product_2_cart` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
