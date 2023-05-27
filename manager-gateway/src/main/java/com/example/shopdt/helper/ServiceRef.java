@@ -1,6 +1,6 @@
 package com.example.shopdt.helper;
 
-import com.example.shopdt.repository.UserRepository;
+import com.example.shopdt.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ServiceRef {
