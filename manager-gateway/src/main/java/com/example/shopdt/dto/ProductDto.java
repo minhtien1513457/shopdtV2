@@ -5,17 +5,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldNameConstants;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldNameConstants
-public class UserDto {
+public class ProductDto {
     private String id;
-    private String username;
-    private String email;
-    private String roleName;
+    private String name;
+    private String description;
+    private String status;
+    private BigDecimal price;
+    private Integer total;
+    private String manufacturerId;
+    private String manufacturerName;
     private Date createdDate;
     private Date updatedDate;
 }

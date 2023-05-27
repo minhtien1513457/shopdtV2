@@ -11,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldNameConstants
-public class UserDto {
+public class CartDto {
     private String id;
     private String username;
     private String email;

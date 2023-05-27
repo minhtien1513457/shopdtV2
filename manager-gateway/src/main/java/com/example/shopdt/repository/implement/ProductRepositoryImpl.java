@@ -1,9 +1,7 @@
 package com.example.shopdt.repository.implement;
 
 import com.example.shopdt.entity.ProductEntity;
-import com.example.shopdt.entity.RoleEntity;
-import com.example.shopdt.repository.ProductRepository;
-import com.example.shopdt.repository.RoleRepository;
+import com.example.shopdt.repository.product.ProductRepository;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 

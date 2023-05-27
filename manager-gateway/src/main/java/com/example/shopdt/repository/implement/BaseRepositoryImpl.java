@@ -15,14 +15,7 @@ public abstract class BaseRepositoryImpl<T, ID> extends SimpleJpaRepository<T, I
         this.em = em;
         this.queryFactory = new JPAQueryFactory(em);
     }
-    @Override
-    public T findByIdMandatory(ID id) {
-        return findById(id)
-                .orElseThrow(() -> {
-                    String errorMessage = String.format("Entity [%s] with id [%s] was not found in DB", getDomainClass().getSimpleName(), id);
-                    return new DbResultNotFoundException(errorMessage);
-                });
-    }
+
     public void clear() {
         em.clear();
     }

@@ -40,7 +40,9 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<UserEntity, String> i
                         QUserEntity.userEntity.id.as(UserDto.Fields.id),
                         QUserEntity.userEntity.username.as(UserDto.Fields.username),
                         QUserEntity.userEntity.email.as(UserDto.Fields.email),
-                        QRoleEntity.roleEntity.name.as(UserDto.Fields.roleName)
+                        QRoleEntity.roleEntity.name.as(UserDto.Fields.roleName),
+                        QRoleEntity.roleEntity.createdDate.as(UserDto.Fields.createdDate),
+                        QRoleEntity.roleEntity.updatedDate.as(UserDto.Fields.updatedDate)
                 ))
                 .from(QUserEntity.userEntity)
                 .innerJoin(QRoleEntity.roleEntity)

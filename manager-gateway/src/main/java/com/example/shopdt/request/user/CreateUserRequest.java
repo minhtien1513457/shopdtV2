@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateUserRequest {
-    @NotNull
     @NotEmpty
     private String username;
 
@@ -19,11 +18,9 @@ public class CreateUserRequest {
     @Email
     private String email;
 
-    @NotNull
     @NotEmpty
     private String password;
 
-    @NotNull
     @NotEmpty
     private String roleId;
 }
