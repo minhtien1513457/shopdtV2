@@ -2,7 +2,7 @@ package com.example.shopdt.use_case.user.maper;
 
 import com.example.shopdt.use_case.user.dto.UserDto;
 import com.example.shopdt.use_case.user.entity.UserEntity;
-import com.example.shopdt.request.user.CreateUserRequest;
+import com.example.shopdt.use_case.user.request.CreateUserRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

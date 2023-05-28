@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,6 +13,8 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
+@Getter
+@Setter
 @MappedSuperclass
 public class BaseEntity {
     @Id

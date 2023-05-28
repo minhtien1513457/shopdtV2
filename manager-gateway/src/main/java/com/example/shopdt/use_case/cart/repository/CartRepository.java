@@ -1,4 +1,4 @@
-package com.example.shopdt.repository.cart;
+package com.example.shopdt.use_case.cart.repository;
 
 import com.example.shopdt.use_case.cart.entity.CartEntity;
 import com.example.shopdt.repository.BaseRepository;
