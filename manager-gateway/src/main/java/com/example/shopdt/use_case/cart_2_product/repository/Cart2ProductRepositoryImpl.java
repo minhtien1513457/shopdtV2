@@ -1,9 +1,8 @@
-package com.example.shopdt.repository.implement;
+package com.example.shopdt.use_case.cart_2_product.repository;
 
-import com.example.shopdt.entity.Cart2ProductEntity;
-import com.example.shopdt.entity.RoleEntity;
-import com.example.shopdt.repository.Cart2ProductRepository;
-import com.example.shopdt.repository.RoleRepository;
+import com.example.shopdt.repository.implement.BaseRepositoryImpl;
+import com.example.shopdt.use_case.cart_2_product.entity.Cart2ProductEntity;
+import com.example.shopdt.use_case.cart_2_product.repository.Cart2ProductRepository;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 

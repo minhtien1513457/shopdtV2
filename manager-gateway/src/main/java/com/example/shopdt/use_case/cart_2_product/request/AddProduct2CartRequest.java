@@ -1,7 +1,6 @@
-package com.example.shopdt.use_case.cart.request;
+package com.example.shopdt.use_case.cart_2_product.request;
 
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
