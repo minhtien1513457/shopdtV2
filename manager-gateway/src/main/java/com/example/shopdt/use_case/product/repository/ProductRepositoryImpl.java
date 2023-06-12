@@ -1,9 +1,10 @@
 package com.example.shopdt.use_case.product.repository;
 
-import com.example.shopdt.use_case.product.dto.ProductDto;
-import com.example.shopdt.entity.*;
 import com.example.shopdt.repository.implement.BaseRepositoryImpl;
+import com.example.shopdt.use_case.manufacturer.entity.QManufacturerEntity;
+import com.example.shopdt.use_case.product.dto.ProductDto;
 import com.example.shopdt.use_case.product.entity.ProductEntity;
+import com.example.shopdt.use_case.product.entity.QProductEntity;
 import com.querydsl.core.types.Projections;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;

@@ -2,7 +2,7 @@ package com.example.shopdt.use_case.user.repository;
 
 import com.example.shopdt.use_case.user.dto.UserDto;
 import com.example.shopdt.entity.QRoleEntity;
-import com.example.shopdt.entity.QUserEntity;
+import com.example.shopdt.use_case.user.entity.QUserEntity;
 import com.example.shopdt.use_case.user.entity.UserEntity;
 import com.example.shopdt.repository.implement.BaseRepositoryImpl;
 import com.querydsl.core.types.Projections;
