@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+
+.light-button {
+    border: 0px !important;
+}
+
+.btn-create {
+    background-color: white;
+    color: blue
+}
+
+.btn-action {
+    background-color: white;
+    color: #f607e2;
+    margin-left: 0.5%
+}
+
+.user-detail {
+    cursor: pointer;
+    color: blue;
+}
