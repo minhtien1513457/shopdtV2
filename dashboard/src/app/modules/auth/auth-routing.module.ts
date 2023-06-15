@@ -7,8 +7,7 @@ const routes: Routes = [
     path: '',
     component: AuthComponent,
     children: [
-      { path: '', loadChildren: './login/login.module#LoginModule' }
-      
+      { path: '', loadChildren: () => import('./login/login.module').then(m => m.LoginModule)},
     ]
   }
 ];

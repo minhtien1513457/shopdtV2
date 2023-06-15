@@ -1,10 +1,16 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ApiUserService } from 'src/app/shared/services/api-user.service';
-import { MatPaginator, MatTableDataSource, PageEvent, MatSort, MatButtonModule, MatDialog, MatSnackBar } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { PageEvent } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SelectionModel } from '@angular/cdk/collections';
-import { CreateUserModalComponent } from '../../modal/create-user-modal/create-user-modal.component';
-import { DetailUserModalComponent } from '../../modal/detail-user-modal/detail-user-modal.component';
-import { EditUserModalComponent } from '../../modal/edit-user-modal/edit-user-modal.component';
+import { CreateUserModalComponent } from './create-user-modal/create-user-modal.component';
+import { EditUserModalComponent } from './edit-user-modal/edit-user-modal.component';
+import { DetailUserModalComponent } from './detail-user-modal/detail-user-modal.component';
 
 @Component({
   selector: 'app-users',
@@ -83,7 +89,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
       this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
-  private selectRow($event, e) {
+  selectRow($event, e) {
     if ($event.checked) {
       this.checkPushObInArray(e,this.selectedElement);
     }else {
@@ -98,7 +104,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
       dataSource.data.forEach(element => {
         this.selectedElement.push(element);
       });
-    } 
+    }
     console.log(this.selectedElement)
     return;
   }
@@ -131,7 +137,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
     }
   }
 
-  public getServerData(e?: PageEvent) {
+  public getServerData(e?: PageEvent): PageEvent{
     this.selectedElement = [];
     this.selection.clear();
     this.userApi.getListUser(e.pageIndex + 1, e.pageSize).subscribe(res => {
@@ -147,7 +153,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
         // handle error
       }
     );
-    return event;
+    return e;
   }
 
   openCreateModal(): void {

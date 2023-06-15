@@ -2,65 +2,61 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {
-   MatButtonModule,
-   MatToolbarModule,
-   MatIconModule,
-   MatBadgeModule,
-   MatSidenavModule,
-   MatListModule,
-   MatGridListModule,
-   MatFormFieldModule,
-   MatInputModule,
-   MatSelectModule,
-   MatRadioModule,
-   MatDatepickerModule,
-   MatNativeDateModule,
-   MatChipsModule,
-   MatTooltipModule,
-   MatTableModule,
-   MatPaginatorModule,
-   MatCardModule,
-   MatAutocompleteModule,
-   MatButtonToggleModule,
-   MatCheckboxModule,
-   MatStepperModule,
-   MatDialogModule,
-   MatExpansionModule,
-   MatMenuModule,
-   MatProgressBarModule,
-   MatProgressSpinnerModule,
-   MatRippleModule,
-   MatSliderModule,
-   MatSlideToggleModule,
-   MatSnackBarModule,
-   MatSortModule,
-   MatTabsModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTabsModule } from '@angular/material/tabs';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { HeaderSidebarComponent } from 'src/app/components/header-sidebar/header-sidebar.component';
 import { RouterModule } from '@angular/router';
 import { CdkTableModule } from '@angular/cdk/table';
-import { CreateUserModalComponent } from 'src/app/shared/modal/create-user-modal/create-user-modal.component';
-import { DetailUserModalComponent } from 'src/app/shared/modal/detail-user-modal/detail-user-modal.component';
-import { EditUserModalComponent } from 'src/app/shared/modal/edit-user-modal/edit-user-modal.component';
+
 
 @NgModule({
    declarations: [
       HeaderSidebarComponent,
       HeaderComponent,
       FooterComponent,
-      CreateUserModalComponent,
-      DetailUserModalComponent,
-      EditUserModalComponent
+      // CreateUserModalComponent,
+      // DetailUserModalComponent,
+      // EditUserModalComponent
    ],
 
   imports: [
    MatFormFieldModule,
    MatBadgeModule,
    CommonModule,
-   FormsModule, 
+   FormsModule,
    ReactiveFormsModule,
    RouterModule,
    CdkTableModule,
@@ -94,14 +90,14 @@ import { EditUserModalComponent } from 'src/app/shared/modal/edit-user-modal/edi
    MatTableModule,
    MatTabsModule,
    MatToolbarModule,
-   MatTooltipModule,
+   MatTooltipModule
   ],
   exports: [
      //export module
      MatFormFieldModule,
      MatBadgeModule,
      CommonModule,
-     FormsModule, 
+     FormsModule,
      ReactiveFormsModule,
      RouterModule,
      CdkTableModule,
@@ -136,13 +132,14 @@ import { EditUserModalComponent } from 'src/app/shared/modal/edit-user-modal/edi
      MatTabsModule,
      MatToolbarModule,
      MatTooltipModule,
+
      //export component
      HeaderSidebarComponent,
      HeaderComponent,
      FooterComponent,
-     CreateUserModalComponent,
-     DetailUserModalComponent,
-     EditUserModalComponent
+   //   CreateUserModalComponent,
+   //   DetailUserModalComponent,
+   //   EditUserModalComponent
   ],
   providers: [
      MatDatepickerModule,

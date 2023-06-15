@@ -4,12 +4,11 @@ import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, timeout } from 'rxjs/operators';
 import { JwtService } from './jwt.service';
-import * as data from '../../../assets/config/config.dev.json';
 
 @Injectable()
 export class ApiService {
-  private timeOut = 1000 * 60 * 2;
-  private _jsonURL = 'assets/config/config.dev.json';
+  public timeOut = 1000 * 60 * 2;
+  public _jsonURL = 'assets/config/config.dev.json';
 
   public urlServer;
   constructor(
@@ -17,7 +16,6 @@ export class ApiService {
     private jwtService: JwtService,
     private router: Router,
   ) {
-      this.urlServer = data.apiServer.api_url;
   }
 
   /**Set header api */
@@ -80,9 +78,9 @@ export class ApiService {
     // }else if(msg != errorCode){
     //   this.alertService.error(msg);
     // }else{
-    //   this.alertService.error(this.translateService.instant('lbl_serve_error')); 
+    //   this.alertService.error(this.translateService.instant('lbl_serve_error'));
     // }
-  } 
+  }
 
   /**Redirect to page login */
   navigateLogin() {
@@ -93,7 +91,7 @@ export class ApiService {
   /**Method get */
   get({ path, params }: { path: string; params?: HttpParams; }): Observable<any> {
     return this.httpClient.get(
-      `${this.urlServer}${path}`,
+      `${path}`,
       {
         headers: this.setHeadersGet(),
         params: params
@@ -108,30 +106,20 @@ export class ApiService {
   /**Method put */
   put(path: string, body: Object = {}): Observable<any> {
     return this.httpClient.put(
-      `${this.urlServer}${path}`,
+      `${path}`,
       JSON.stringify(body),
       { headers: this.setHeaders(), },
-    )
-      .pipe(
-        timeout(this.timeOut),
-        map((res: Response) => {
-          if (res) {
-            if (res.status === 201) {
-                return [{ status: res.status, json: res }]
-            }
-            else if (res.status === 200) {
-                return [{ status: res.status, json: res }]
-            }
-          }
-        }),
-        catchError(err => this.formatErrors(err))
-      );
+    ).pipe(
+      timeout(this.timeOut),
+      map((res: Response) => res),
+      catchError(err => this.formatErrors(err))
+    );
   }
 
 /**Method post */
   post(path: string, body: Object = {}): Observable<any> {
     return this.httpClient.post(
-      `${this.urlServer}${path}`,
+      `${path}`,
       JSON.stringify(body),
       { headers: this.setHeaders() }
     ).pipe(
@@ -144,7 +132,7 @@ export class ApiService {
 /**Method delete */
   delete({ path, params }: { path: string; params?: HttpParams; }): Observable<any> {
     return this.httpClient.delete(
-      `${this.urlServer}${path}`,
+      `${path}`,
       {
         headers: this.setHeaders(),
         params: params

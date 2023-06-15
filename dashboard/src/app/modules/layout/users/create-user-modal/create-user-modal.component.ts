@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ApiUserService } from 'src/app/shared/services/api-user.service';
 import { JwtService } from 'src/app/shared/services/jwt.service';

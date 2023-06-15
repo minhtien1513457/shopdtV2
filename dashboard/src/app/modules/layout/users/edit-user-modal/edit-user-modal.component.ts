@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject, EventEmitter } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar, ThemePalette } from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ThemePalette } from '@angular/material/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiUserService } from 'src/app/shared/services/api-user.service';
 
