@@ -1,0 +1,23 @@
+{
+  "/management-gateway": {
+    "target": "http://localhost:8080",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "headers": {
+      "portal-user-id": 53795
+    },
+    "pathRewrite": {
+      "^/management-gateway": ""
+    }
+  },
+  "/key-cloak": {
+    "target": "https://lemur-6.cloud-iam.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/key-cloak": ""
+    },
+    "logLevel": "debug"
+  }
+}

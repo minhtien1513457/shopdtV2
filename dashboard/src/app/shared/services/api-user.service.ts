@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { JwtService } from './jwt.service';
+// import { JwtService } from './local-storage.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class ApiUserService {
 
   constructor(
-    private jwt: JwtService,
+    // private jwt: JwtService,
     private api: ApiService
   ) { }
 
@@ -21,11 +21,11 @@ export class ApiUserService {
         if (res) {
           let result = res;
           let role: string = result.role
-          this.jwt.saveTicket(result.token);
-          this.jwt.saveRole(role.substring(1, (role.length) - 1));
-          this.jwt.saveExpired(result.expire);
-          this.jwt.saveUsername(res.username)
-          this.jwt.saveLanguage('en');
+          // this.jwt.saveTicket(result.token);
+          // this.jwt.saveRole(role.substring(1, (role.length) - 1));
+          // this.jwt.saveExpired(result.expire);
+          // this.jwt.saveUsername(res.username)
+          // this.jwt.saveLanguage('en');
           return res;
         }
       })

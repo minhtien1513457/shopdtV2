@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ApiUserService } from 'src/app/shared/services/api-user.service';
-import { JwtService } from 'src/app/shared/services/jwt.service';
+// import { JwtService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-create-user-modal',
@@ -23,7 +23,7 @@ export class CreateUserModalComponent implements OnInit {
     public dialogRef: MatDialogRef<CreateUserModalComponent>,
     private frmBuilder: FormBuilder,
     private userService: ApiUserService,
-    private jwt: JwtService,
+    // private jwt: JwtService,
     private _snackBar: MatSnackBar
     ) {}
 
@@ -87,7 +87,7 @@ export class CreateUserModalComponent implements OnInit {
         password: this.angForm.value.password,
         email: this.angForm.value.email,
         role: this.angForm.value.role,
-        createdUser: this.jwt.getUsername()
+        // createdUser: this.jwt.getUsername()
       };
       this.userService.createUser(req).subscribe(res => {
         if (res) {

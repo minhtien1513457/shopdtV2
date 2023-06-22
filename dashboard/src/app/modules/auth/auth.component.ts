@@ -1,4 +1,8 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ConfigService } from 'src/app/shared/services/config.service';
+import jwtDecode from "jwt-decode";
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private http: HttpClient ) { }
 
-  ngOnInit() {
-  }
-
+    ngOnInit(): void {
+    }
 }

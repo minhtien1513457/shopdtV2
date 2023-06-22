@@ -1,0 +1,10 @@
+{
+  "management_gateway_url": "http://localhost:8080/api/",
+  "oauth_client_id": "0oa9x80ubv1ClV0FZ5d7",
+  "oauth_login_url": "https://lemur-6.cloud-iam.com/auth/realms/my-shopdt/protocol/openid-connect/auth",
+  "oauth_token_url": "https://lemur-6.cloud-iam.com/auth/realms/my-shopdt/protocol/openid-connect/token",
+  "oauth_logout_url": "https://lemur-6.cloud-iam.com/auth/realms/my-shopdt/protocol/openid-connect/logout",
+  "oauth_revoke_token": "https://lemur-6.cloud-iam.com/auth/realms/my-shopdt/protocol/openid-connect/revoke",
+  "key_cloak_url": "key-cloak",
+  "root_url": "http://localhost:4200"
+}

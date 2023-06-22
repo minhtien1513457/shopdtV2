@@ -2,7 +2,7 @@ import { Component, OnInit  } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiUserService } from 'src/app/shared/services/api-user.service';
-import { JwtService } from 'src/app/shared/services/jwt.service';
+import { JwtService } from 'src/app/shared/services/local-storage.service';
 
 
 @Component({
@@ -20,16 +20,16 @@ export class LoginComponent implements OnInit {
   submitted = false;
   isRole = '';
   constructor(
-   
+
     private userService: ApiUserService,
     private frmBuilder: FormBuilder,
     private router: Router,
     private jwt: JwtService,
     private route: ActivatedRoute,
-    
+
   ) {
   }
-  
+
   /**Implement OnInit's `ngOnInit` method
    ** validate form
   */
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.isRole = this.jwt.getRole();
     this.onValidate();
   }
-  
+
   /**Action when submit form */
   public onSubmit(): void {
     this.submitted = true;
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         if (res) {
           this.disabledBtn = false
           if (res.success) {
-              this.router.navigate([`/dashboard`]);                      
+              this.router.navigate([`/dashboard`]);
           } else {
             this.jwt.clearStorage();
           }

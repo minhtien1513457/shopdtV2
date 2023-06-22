@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-header-sidebar',
@@ -10,7 +11,10 @@ export class HeaderSidebarComponent implements OnInit {
   opened = true;
 
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+  ) {
+   }
 
   ngOnInit() {
     console.log(window.innerWidth)
@@ -43,4 +47,7 @@ export class HeaderSidebarComponent implements OnInit {
     }
   }
 
+  logout() {
+      this.authService.logout();
+  }
 }

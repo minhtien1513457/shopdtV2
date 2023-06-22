@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { JwtService } from './jwt.service';
+import { JwtService } from './local-storage.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

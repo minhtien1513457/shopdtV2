@@ -35,21 +35,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTabsModule } from '@angular/material/tabs';
-import { HeaderComponent } from 'src/app/components/header/header.component';
-import { FooterComponent } from 'src/app/components/footer/footer.component';
-import { HeaderSidebarComponent } from 'src/app/components/header-sidebar/header-sidebar.component';
 import { RouterModule } from '@angular/router';
 import { CdkTableModule } from '@angular/cdk/table';
 
 
 @NgModule({
    declarations: [
-      HeaderSidebarComponent,
-      HeaderComponent,
-      FooterComponent,
-      // CreateUserModalComponent,
-      // DetailUserModalComponent,
-      // EditUserModalComponent
    ],
 
   imports: [
@@ -132,14 +123,6 @@ import { CdkTableModule } from '@angular/cdk/table';
      MatTabsModule,
      MatToolbarModule,
      MatTooltipModule,
-
-     //export component
-     HeaderSidebarComponent,
-     HeaderComponent,
-     FooterComponent,
-   //   CreateUserModalComponent,
-   //   DetailUserModalComponent,
-   //   EditUserModalComponent
   ],
   providers: [
      MatDatepickerModule,

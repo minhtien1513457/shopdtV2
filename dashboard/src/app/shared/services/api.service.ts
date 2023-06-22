@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, timeout } from 'rxjs/operators';
-import { JwtService } from './jwt.service';
+// import { JwtService } from './local-storage.service';
 
 @Injectable()
 export class ApiService {
@@ -13,7 +13,7 @@ export class ApiService {
   public urlServer;
   constructor(
     private httpClient: HttpClient,
-    private jwtService: JwtService,
+    // private jwtService: JwtService,
     private router: Router,
   ) {
   }
@@ -27,22 +27,22 @@ export class ApiService {
       }
     );
 
-    if (this.jwtService.getTicket()) {
-      header = header.append('Authorization', 'Bearer ' + this.jwtService.getTicket());
-      header = header.append('username', this.jwtService.getUsername());
-      header = header.append('language', this.jwtService.getLanguage());
-    }
+    // if (this.jwtService.getTicket()) {
+    //   header = header.append('Authorization', 'Bearer ' + this.jwtService.getTicket());
+    //   header = header.append('username', this.jwtService.getUsername());
+    //   header = header.append('language', this.jwtService.getLanguage());
+    // }
     return header;
   }
 
   /**Set header method get */
   private setHeadersGet(): HttpHeaders {
     let header = new HttpHeaders();
-    if (this.jwtService.getTicket()) {
-      header = header.append('Authorization', 'Bearer ' + this.jwtService.getTicket());
-      header = header.append('username', this.jwtService.getUsername());
-      header = header.append('language', this.jwtService.getLanguage());
-    }
+    // if (this.jwtService.getTicket()) {
+    //   header = header.append('Authorization', 'Bearer ' + this.jwtService.getTicket());
+    //   header = header.append('username', this.jwtService.getUsername());
+    //   header = header.append('language', this.jwtService.getLanguage());
+    // }
     return header;
   }
 
@@ -84,7 +84,7 @@ export class ApiService {
 
   /**Redirect to page login */
   navigateLogin() {
-    this.jwtService.clearStorage();
+    // this.jwtService.clearStorage();
     this.router.navigate(['/login']);
   }
 
